@@ -1,0 +1,393 @@
+body,
+html {
+  height: 100%;
+    width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #444444;
+}
+* {
+  touch-action: manipulation;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+ #vaszon {
+     width: 0%;
+  height: 100%;
+ display: block;
+  top: 0;
+  left: 0;
+}
+
+
+.irany {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.cipoGombokKerete {
+  position: absolute;
+  bottom: 0;
+  max-height: 25%;
+  max-width: 50%;
+    overflow-y: auto;
+}
+.cipoGombok {
+  background-size: cover;
+  background-position: 50%;
+  background-color: white;
+  margin-bottom: 3px;
+  padding: 10px;
+  height: 80px;
+  max-width: 80px;
+  border-radius: 80px;
+  background: linear-gradient(white 10px,gray 30px);
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.cipoGomb:hover {
+  border-left: 5px solid white;
+  width: 58px;
+}
+.cipoGombok.--is-active {
+  border-right: 3px solid red;
+  width: 58px;
+  cursor: default;
+}
+.cipoGombok.--is-active:hover {
+  border-left: none;
+}
+.cipoGombok img {
+  height: 100%;
+  width: auto;
+  pointer-events: none;
+}
+
+@keyframes popout {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes wheelin {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 960px) {
+  .options {
+    top: 0;
+  }
+  .info {
+    padding: 0 1em 1em 0;
+  }
+  .info__message {
+    display: flex;
+    align-items: flex-end;
+  }
+  .info__message p {
+    margin: 0;
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 720px) {
+  .info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em 1em;
+  }
+  .info__message {
+    margin-bottom: 1em;
+  }
+}
+@media (max-width: 600px) {
+  .info {
+    padding: 1em 2em;
+  }
+  .info__message {
+    display: none;
+  }
+  .cipoGombokKerete {
+    left: 15%;
+  }
+  .cipoGombok {
+    margin-bottom: 1px;
+  }
+  .cipoGombok.--is-active {
+    border-right: 2px solid red;
+    width: 47px;
+  }
+  .cipoGombok img {
+    height: 100%;
+    width: auto;
+    pointer-events: none;
+  }
+}
+.szinDoboz
+{
+    position: absolute;
+    display: none;
+    right: 5%;
+    bottom: 6%;
+}
+
+.texturaKeret {
+    position: absolute;
+    display: none;
+    left: 10%;
+    border:3px solid;
+    max-height:400px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    border-color: linear-gradient(white 10px,gray 30px);
+}
+::-webkit-scrollbar { /* ez 0 ra állítja a scrollbar szélességét, így nem látszik  */
+  width: 0px;
+}
+.texturaValasztas {
+  display: flex;
+  cursor: pointer;
+}
+.texturaValasztas.--is-active {
+  border-right: 3px solid red;
+  cursor: default;
+}
+.texturaValasztas.--is-active:hover {
+  border-left: none;
+}
+.texturaValasztas img {
+  height: 80px;
+  width: 80px;
+  pointer-events: none;
+}
+#kerekit
+{
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+#kisebb
+{
+    height: 80%;
+    width: auto;
+}
+.cipoGombokKereteJobbra {
+    position: absolute;
+    display: none;
+    right: 5%;
+    bottom: 50%;
+}
+.gombKeretOk
+{
+    position: absolute;
+    right: 5%;
+    display: none;
+    bottom: 65%;
+}
+.fehergomb
+{
+   background-size: cover;
+  background-position: 50%;
+  background-color: white;
+  padding: 10px;
+  height: 80px;
+  width: 80px;
+  border-radius: 80px;
+    display: inline-block;
+  background:white;
+    border: 1px solid;
+  justify-content: center;
+    text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.okgomb
+{
+    background-size: cover;
+  background-position: 50%;
+  background-color: white;
+  margin-bottom: 3px;
+  padding: 10px;
+  height: 80px;
+  width: 80px;
+  border-radius: 80px;
+  background: radial-gradient(circle, white, lightgreen, green);
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.okgomb img {
+height: 100%;
+width: auto;
+pointer-events: none;
+}
+
+.cipoMenu
+{
+background:#212121;
+opacity: 0.97;
+border-top:1px solid #e5e5e5;
+position: fixed;
+transition: 0.3s;
+bottom:0;
+height:0;
+margin: auto;
+max-width: 50%;
+width: 600px;
+overflow:hidden;
+transition:height .20s linear;
+transform:translateZ(0) scale(1,1);
+z-index:1000;
+}
+.cipoMenu a {
+  padding: 10px 10px 10px 25px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display:block;
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.cipoMenu a:hover {
+  color: #f1f1f1;
+    cursor: pointer;
+  text-decoration-color: #f1f1f1;
+}
+.CipoMenuGombokKerete
+{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+.CipoMenuGombok
+{
+    background-size: cover;
+  background-position: 50%;
+  background-color: white;
+  margin-bottom: 3px;
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+  border-radius: 80px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+    
+}
+#szemetes
+{
+     background: radial-gradient(circle, white,white, red);
+}
+#bemutatoterem
+{
+     background: radial-gradient(circle, white,white, gold);
+}
+#mentes
+{
+     background: radial-gradient(circle, white,white, blue);
+}
+.CipoMenuGombok img {
+height: 100%;
+width: auto;
+pointer-events: none;
+}
+.MenuKeret
+{
+    border-radius: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+    display: none;
+    background-color: #f1f1f1;
+    min-width:160px;
+    margin-left: 20%;
+    margin-right: 20%;
+    align-content: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+.beviteliMezo
+{
+    width: 100%;
+    max-width: 200px;
+}
+@media screen and (min-width: 601px) {
+    div.texturaKeret
+    {
+        left: 10%;
+        max-width: 10%;
+        max-height: 50%;
+    }
+    div.texturaValasztas
+    {
+        height: 80px;
+        width: 80px;
+    }
+}
+@media screen and (max-width: 600px) {
+
+    div.texturaKeret
+    {
+        left: 1%;
+        max-width: 10%;
+        max-height: 50%;
+    }
+    div.texturaValasztas
+    {
+        height: 69px;
+        width: auto;
+    }
+    div.szinDoboz
+    {
+        bottom: 1%;
+        right: 1%;
+    }
+    div.cipoGombokKereteJobbra
+    {
+        top: 60px;
+        right: 1%;
+    }
+    div.gombKeretOk
+    {
+        top: 150px;
+        right: 1%;
+    }
+    div.cipoMenu
+    {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    div.szinDoboz
+    {
+        bottom: 1%;
+        right: 1%;
+    }
+}

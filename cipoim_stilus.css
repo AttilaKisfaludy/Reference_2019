@@ -1,0 +1,55 @@
+table
+{
+border: 2px solid gray;
+border-radius: 6px;
+padding: 5px;
+text-align: center;
+background-color: rgba(60,150,150,0.7);
+box-shadow:20px 20px 10px rgba(60,150,150,0.3);
+border-collapse: collapse;
+overflow-y: auto;
+max-height: 75%;
+min-height: 25%;
+}
+th
+{
+    position: sticky;
+    top: 0;
+    background-color: rgba(60,180,180,0.9);
+    border-radius: 6px;
+    text-align: left;
+    padding: 5px;
+    margin-right: 5px;
+}
+.sor:hover
+{
+    box-shadow: inset 2px 2px 20px 0px rgba(60,150,150,0.3);
+    border-radius: 6px;
+}
+.ikon
+{
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    margin: 10px;
+}
+.rejt
+{
+    visibility: hidden;
+}
+.rejtett
+{
+    display: none;
+}
+body
+{
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+.hatterek
+{
+    display: none;
+}
